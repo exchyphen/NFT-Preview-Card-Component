@@ -1,0 +1,156 @@
+:root {
+    /* colors */
+
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    
+    
+    --very-dark-blue-body: hsl(217, 54%, 11%); /* main bg */
+    --very-dark-blue-card: hsl(216, 50%, 16%); /* card bg */
+    --very-dark-blue-line: hsl(215, 32%, 27%); /* line */
+    --white: hsl(0, 0%, 100%);
+
+    /* font */
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--very-dark-blue-body);
+}
+
+.main-container {
+    width: 375px;
+    height: 650px;
+    border-radius: 10px;
+    padding: 20px;
+    background: var(--very-dark-blue-card);
+    box-shadow: 0 20px 20px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.nft-img-container {
+    width: 100%;
+    height: 50%;
+    background-image: url("../images/image-equilibrium.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.overlay-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsla(178, 100%, 50%, 0.5);
+    opacity: 0%;
+}
+
+.eye-overlay {
+    width: auto;
+    height: 3rem;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 1.6rem;
+}
+
+.nft-flavor-text {
+    color: var(--soft-blue);
+    font-weight: 300;
+}
+
+.purchase-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-container {
+    color: var(--cyan);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-left-container {
+    color: var(--soft-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background: var(--very-dark-blue-line);
+}
+
+.creator-container {
+    width: 100%;
+    color: var(--soft-blue);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.creator-avatar {
+    width: auto;
+    height: 2rem;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+}
+
+.creator-name {
+    color: var(--white);
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.8rem;
+    color: white;
+}
+
+/* active states */
+h1:hover,
+.creator-name:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
+
+.overlay-wrapper:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
+
+@media (max-width: 400px) {
+    .attribution {
+        right: none;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
